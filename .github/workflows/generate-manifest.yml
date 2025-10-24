@@ -4,6 +4,7 @@ on:
     paths:
       - '**/*.yaml'
       - '!manifest.yaml'
+  workflow_dispatch:  # Allow manual trigger
 jobs:
   generate:
     runs-on: ubuntu-latest
