@@ -16,13 +16,11 @@ jobs:
           go-version: '1.24'
 
       - name: Generate manifest
+        working-directory: tools/manifest-generator
         run: |
-          cd tools/manifest-generator
-          go mod download
-          cd ../..
-          go run ./tools/manifest-generator/main.go \
-            -dir . \
-            -output manifest.yaml \
+          go run . \
+            -dir ../.. \
+            -output ../../manifest.yaml \
             -base-url https://plugins.pentora.ai
       - name: Commit manifest
         run: |
