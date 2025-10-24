@@ -1,0 +1,102 @@
+name: Sync Plugins to Cloudflare R2
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.yaml'
+      - '!.github/**'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  sync-to-r2:
+    name: Upload Plugins to R2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup rclone
+        run: |
+          curl https://rclone.org/install.sh | sudo bash
+
+      - name: Configure rclone for Cloudflare R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          mkdir -p ~/.config/rclone
+          cat > ~/.config/rclone/rclone.conf << EOF
+          [r2]
+          type = s3
+          provider = Cloudflare
+          access_key_id = $R2_ACCESS_KEY_ID
+          secret_access_key = $R2_SECRET_ACCESS_KEY
+          endpoint = https://$R2_ACCOUNT_ID.r2.cloudflarestorage.com
+          acl = public-read
+          no_check_bucket = true
+          EOF
+
+      - name: Sync all plugins to R2
+        run: |
+          echo "📦 Syncing entire plugin repository to R2..."
+          rclone sync . r2:pentora-plugins/ \
+            --exclude '.git/**' \
+            --exclude '.github/**' \
+            --exclude 'README.md' \
+            --progress \
+            --delete-excluded \
+            --transfers 8 \
+            --checkers 16
+
+      - name: Verify upload
+        run: |
+          echo "✅ Verifying uploaded files..."
+          echo "Total files in R2:"
+          rclone ls r2:pentora-plugins/ | wc -l
+          echo ""
+          echo "Sample files:"
+          rclone ls r2:pentora-plugins/ | head -20
+
+      - name: Purge Cloudflare cache
+        if: success()
+        env:
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          echo "🔄 Purging Cloudflare cache for plugins.pentora.ai..."
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/purge_cache" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{"hosts":["plugins.pentora.ai"]}' \
+            --silent --show-error
+
+      - name: Upload summary
+        if: always()
+        run: |
+          echo "## 📦 R2 Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Repository:** pentora-plugins" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** main" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### ✅ Upload Status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Plugin Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "- **SSH Plugins:** $(ls -1 ssh/*.yaml 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **HTTP Plugins:** $(ls -1 http/*.yaml 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **TLS Plugins:** $(ls -1 tls/*.yaml 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Database Plugins:** $(ls -1 database/*.yaml 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Network Plugins:** $(ls -1 network/*.yaml 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total:** $(find . -name '*.yaml' -not -path './.github/*' | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🌐 **Plugins available at:** https://plugins.pentora.ai/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Test command:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "curl -I https://plugins.pentora.ai/manifest.yaml" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
