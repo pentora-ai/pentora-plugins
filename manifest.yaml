@@ -101,8 +101,8 @@ plugins:
     categories:
       - ssh
     url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/ssh/ssh-cve-2024-6387.yaml
-    checksum: sha256:3e61278123d287b62f58b452a967d81a83f9758f435552d92abae4cfe7943eb1
-    size: 4571
+    checksum: sha256:1370c9b75ab5f5cc872a7e072f55a44117cedef5436909df7127851fe0709f64
+    size: 4461
   - name: SSH Default Credentials
     version: 1.0.0
     description: ""
@@ -110,8 +110,8 @@ plugins:
     categories:
       - ssh
     url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/ssh/ssh-default-creds.yaml
-    checksum: sha256:70caf5ed1e934832468adc3adbfe23f21e34302cc381ba222af8fff4ab17e99b
-    size: 1231
+    checksum: sha256:a970f95bbef1c7a5508791b48b7a3e0df2335524a6fb83e2722f0b1757783820
+    size: 1248
   - name: SSH Weak Encryption Cipher
     version: 1.0.0
     description: ""
@@ -212,10 +212,10 @@ index:
   ssh:
     - name: OpenSSH CVE-2024-6387 (regreSSHion)
       version: 1.0.0
-      checksum: sha256:3e61278123d287b62f58b452a967d81a83f9758f435552d92abae4cfe7943eb1
+      checksum: sha256:1370c9b75ab5f5cc872a7e072f55a44117cedef5436909df7127851fe0709f64
     - name: SSH Default Credentials
       version: 1.0.0
-      checksum: sha256:70caf5ed1e934832468adc3adbfe23f21e34302cc381ba222af8fff4ab17e99b
+      checksum: sha256:a970f95bbef1c7a5508791b48b7a3e0df2335524a6fb83e2722f0b1757783820
     - name: SSH Weak Encryption Cipher
       version: 1.0.0
       checksum: sha256:d244b9e8be7063d80ea3a30244a356843fd2aba34d0e4c02560f62ab8efd4469

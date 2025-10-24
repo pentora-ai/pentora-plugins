@@ -12,8 +12,8 @@ metadata:
 
 # Trigger when SSH service is detected
 triggers:
-  - port: 22
-    service: ssh
+  - data_key: ssh.banner
+    condition: exists
 
 # Detect common patterns that suggest default credentials might work
 match:
