@@ -95,14 +95,14 @@ plugins:
     checksum: sha256:e62213d6cb94cb5fd8a4446e8927bd94b6ef63992bbc072a7e255fb3654acdc8
     size: 1243
   - name: OpenSSH CVE-2024-6387 (regreSSHion)
-    version: 1.0.2
+    version: 1.0.3
     description: Signal handler race condition in OpenSSH's server (sshd) allows remote unauthenticated code execution
     author: pentora-security
     categories:
       - ssh
     url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/ssh/ssh-cve-2024-6387.yaml
-    checksum: sha256:1318ea80fb522f18005b92d09f3887c37aadd2bde0f33d2b397afb42a61b0cee
-    size: 4478
+    checksum: sha256:facd60a16f8e8846462c7d33db9d093942be21a4af1859bbf1808ad9a0c099d4
+    size: 4522
   - name: SSH Default Credentials
     version: 1.0.1
     description: ""
@@ -211,8 +211,8 @@ index:
       checksum: sha256:e62213d6cb94cb5fd8a4446e8927bd94b6ef63992bbc072a7e255fb3654acdc8
   ssh:
     - name: OpenSSH CVE-2024-6387 (regreSSHion)
-      version: 1.0.2
-      checksum: sha256:1318ea80fb522f18005b92d09f3887c37aadd2bde0f33d2b397afb42a61b0cee
+      version: 1.0.3
+      checksum: sha256:facd60a16f8e8846462c7d33db9d093942be21a4af1859bbf1808ad9a0c099d4
     - name: SSH Default Credentials
       version: 1.0.1
       checksum: sha256:4b354a8f458e49767a1f53fea48d91a1266f11ceb44c252baeac3a88acf10bf1
