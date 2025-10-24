@@ -13,7 +13,11 @@ jobs:
         with:
           go-version: '1.24'
       - name: Clone pentora repo
-        run: git clone https://github.com/pentora-ai/pentora.git
+        uses: actions/checkout@v4
+        with:
+          repository: pentora-ai/pentora
+          path: pentora
+          token: ${{ secrets.PENTORA_REPO_TOKEN }}
       - name: Generate manifest
         run: |
           go run pentora/cmd/tools/manifest-generator/main.go \
