@@ -1,3 +1,4 @@
+id: ssh-default-credentials
 name: SSH Default Credentials
 version: 1.0.1
 type: evaluation
@@ -21,23 +22,23 @@ match:
   rules:
     - field: ssh.banner
       operator: contains
-      value: "dropbear"
+      value: 'dropbear'
     - field: ssh.banner
       operator: contains
-      value: "IoT"
+      value: 'IoT'
     - field: ssh.banner
       operator: contains
-      value: "embedded"
+      value: 'embedded'
     - field: ssh.banner
       operator: contains
-      value: "Router"
+      value: 'Router'
     - field: ssh.banner
       operator: matches
-      value: ".*[Cc]am.*"
+      value: '.*[Cc]am.*'
 
 output:
   vulnerability: true
   severity: critical
-  message: "SSH service detected on embedded/IoT device - may use default credentials"
-  remediation: "Test for common default credentials (admin/admin, root/root, admin/password). Change all default passwords immediately"
-  reference: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+  message: 'SSH service detected on embedded/IoT device - may use default credentials'
+  remediation: 'Test for common default credentials (admin/admin, root/root, admin/password). Change all default passwords immediately'
+  reference: 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog'

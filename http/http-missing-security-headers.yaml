@@ -1,3 +1,4 @@
+id: http-missing-security-headers
 name: HTTP Missing Security Headers
 version: 1.0.0
 type: evaluation
@@ -39,6 +40,6 @@ match:
 output:
   vulnerability: true
   severity: medium
-  message: "HTTP server is missing critical security headers"
-  remediation: "Add security headers: X-Frame-Options, X-Content-Type-Options, X-XSS-Protection, Strict-Transport-Security, Content-Security-Policy"
-  reference: "https://owasp.org/www-project-secure-headers/"
+  message: 'HTTP server is missing critical security headers'
+  remediation: 'Add security headers: X-Frame-Options, X-Content-Type-Options, X-XSS-Protection, Strict-Transport-Security, Content-Security-Policy'
+  reference: 'https://owasp.org/www-project-secure-headers/'

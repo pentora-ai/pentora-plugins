@@ -1,3 +1,4 @@
+id: tls-weak-cipher-suite
 name: TLS Weak Cipher Suite
 version: 1.0.0
 type: evaluation
@@ -22,29 +23,29 @@ match:
   rules:
     - field: tls.cipher_suites
       operator: contains
-      value: "NULL"
+      value: 'NULL'
     - field: tls.cipher_suites
       operator: contains
-      value: "EXPORT"
+      value: 'EXPORT'
     - field: tls.cipher_suites
       operator: contains
-      value: "DES"
+      value: 'DES'
     - field: tls.cipher_suites
       operator: contains
-      value: "RC4"
+      value: 'RC4'
     - field: tls.cipher_suites
       operator: contains
-      value: "MD5"
+      value: 'MD5'
     - field: tls.cipher_suites
       operator: contains
-      value: "anon"
+      value: 'anon'
     - field: tls.cipher_suites
       operator: matches
-      value: ".*CBC.*"
+      value: '.*CBC.*'
 
 output:
   vulnerability: true
   severity: high
-  message: "TLS server supports weak or deprecated cipher suites"
-  remediation: "Disable weak ciphers (NULL, EXPORT, DES, RC4, MD5, anonymous, CBC mode). Use AEAD ciphers like AES-GCM or ChaCha20-Poly1305"
-  reference: "https://www.rfc-editor.org/rfc/rfc7525"
+  message: 'TLS server supports weak or deprecated cipher suites'
+  remediation: 'Disable weak ciphers (NULL, EXPORT, DES, RC4, MD5, anonymous, CBC mode). Use AEAD ciphers like AES-GCM or ChaCha20-Poly1305'
+  reference: 'https://www.rfc-editor.org/rfc/rfc7525'

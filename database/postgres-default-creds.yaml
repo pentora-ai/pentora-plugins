@@ -1,3 +1,4 @@
+id: postgresql-default-credentials
 name: PostgreSQL Default Credentials
 version: 1.0.0
 type: evaluation
@@ -25,11 +26,11 @@ match:
       value: true
     - field: postgres.banner
       operator: contains
-      value: "PostgreSQL"
+      value: 'PostgreSQL'
 
 output:
   vulnerability: true
   severity: critical
-  message: "PostgreSQL database detected - test for default credentials (postgres user with weak or no password)"
-  remediation: "Ensure postgres user has a strong password. Configure pg_hba.conf to require password authentication. Test for: postgres/postgres, postgres/password, postgres/admin"
-  reference: "https://www.postgresql.org/docs/current/auth-password.html"
+  message: 'PostgreSQL database detected - test for default credentials (postgres user with weak or no password)'
+  remediation: 'Ensure postgres user has a strong password. Configure pg_hba.conf to require password authentication. Test for: postgres/postgres, postgres/password, postgres/admin'
+  reference: 'https://www.postgresql.org/docs/current/auth-password.html'

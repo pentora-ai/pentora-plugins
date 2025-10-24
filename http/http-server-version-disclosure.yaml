@@ -1,3 +1,4 @@
+id: http-server-version-disclosure
 name: HTTP Server Version Disclosure
 version: 1.0.0
 type: evaluation
@@ -25,23 +26,23 @@ match:
       value: ".*/[0-9]+\\.[0-9]+.*"
     - field: http.headers.server
       operator: contains
-      value: "Apache/"
+      value: 'Apache/'
     - field: http.headers.server
       operator: contains
-      value: "nginx/"
+      value: 'nginx/'
     - field: http.headers.server
       operator: contains
-      value: "Microsoft-IIS/"
+      value: 'Microsoft-IIS/'
     - field: http.headers.server
       operator: contains
-      value: "OpenSSL/"
+      value: 'OpenSSL/'
     - field: http.headers.server
       operator: contains
-      value: "PHP/"
+      value: 'PHP/'
 
 output:
   vulnerability: true
   severity: low
-  message: "HTTP server discloses detailed version information in Server header"
-  remediation: "Remove or obfuscate server version information. Configure web server to return generic Server header"
-  reference: "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/02-Fingerprint_Web_Server"
+  message: 'HTTP server discloses detailed version information in Server header'
+  remediation: 'Remove or obfuscate server version information. Configure web server to return generic Server header'
+  reference: 'https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/02-Fingerprint_Web_Server'

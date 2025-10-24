@@ -1,3 +1,4 @@
+id: http-weak-ssl-tls-configuration
 name: HTTP Weak SSL/TLS Configuration
 version: 1.0.0
 type: evaluation
@@ -22,16 +23,16 @@ match:
   rules:
     - field: tls.version
       operator: equals
-      value: "SSLv2"
+      value: 'SSLv2'
     - field: tls.version
       operator: equals
-      value: "SSLv3"
+      value: 'SSLv3'
     - field: tls.version
       operator: equals
-      value: "TLSv1.0"
+      value: 'TLSv1.0'
     - field: tls.version
       operator: equals
-      value: "TLSv1.1"
+      value: 'TLSv1.1'
     - field: http.headers.strict-transport-security
       operator: exists
       value: false
@@ -39,6 +40,6 @@ match:
 output:
   vulnerability: true
   severity: high
-  message: "HTTP server supports weak SSL/TLS protocols or missing HSTS"
-  remediation: "Disable SSLv2, SSLv3, TLS 1.0, and TLS 1.1. Use TLS 1.2 or TLS 1.3. Enable HSTS with max-age=31536000"
-  reference: "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_Transport_Layer_Security"
+  message: 'HTTP server supports weak SSL/TLS protocols or missing HSTS'
+  remediation: 'Disable SSLv2, SSLv3, TLS 1.0, and TLS 1.1. Use TLS 1.2 or TLS 1.3. Enable HSTS with max-age=31536000'
+  reference: 'https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/01-Testing_for_Weak_Transport_Layer_Security'

@@ -1,3 +1,4 @@
+id: tls-self-signed-certificate
 name: TLS Self-Signed Certificate
 version: 1.0.0
 type: evaluation
@@ -25,7 +26,7 @@ match:
       value: true
     - field: tls.certificate.issuer
       operator: equals
-      value: "{{tls.certificate.subject}}"
+      value: '{{tls.certificate.subject}}'
     - field: tls.certificate.verified
       operator: equals
       value: false
@@ -33,6 +34,6 @@ match:
 output:
   vulnerability: true
   severity: medium
-  message: "TLS certificate is self-signed or not trusted by a recognized CA"
+  message: 'TLS certificate is self-signed or not trusted by a recognized CA'
   remediation: "Obtain a certificate from a trusted Certificate Authority (CA). Consider using free CAs like Let's Encrypt for production environments"
-  reference: "https://www.rfc-editor.org/rfc/rfc5280"
+  reference: 'https://www.rfc-editor.org/rfc/rfc5280'

@@ -39,13 +39,14 @@ const (
 
 // PluginManifest describes available plugins in a repository.
 type PluginManifest struct {
-	Version string                   `yaml:"version"`
-	Plugins []PluginManifestEntry    `yaml:"plugins"`
+	Version string                    `yaml:"version"`
+	Plugins []PluginManifestEntry     `yaml:"plugins"`
 	Index   map[string][]PluginDigest `yaml:"index"` // category -> plugins
 }
 
 // PluginManifestEntry describes a plugin in the manifest.
 type PluginManifestEntry struct {
+	ID          string     `yaml:"id,omitempty"` // Unique plugin identifier (slug)
 	Name        string     `yaml:"name"`
 	Version     string     `yaml:"version"`
 	Description string     `yaml:"description"`
@@ -176,6 +177,7 @@ func processPlugin(path string) (*PluginManifestEntry, *PluginDigest, error) {
 
 	// Extract basic fields
 	name, _ := rawPlugin["name"].(string)
+	id, _ := rawPlugin["id"].(string)
 	version, _ := rawPlugin["version"].(string)
 	author, _ := rawPlugin["author"].(string)
 
@@ -230,6 +232,7 @@ func processPlugin(path string) (*PluginManifestEntry, *PluginDigest, error) {
 
 	// Create manifest entry
 	entry := &PluginManifestEntry{
+		ID:          id,
 		Name:        name,
 		Version:     version,
 		Description: description,

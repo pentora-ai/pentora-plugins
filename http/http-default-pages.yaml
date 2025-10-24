@@ -1,3 +1,4 @@
+id: http-default-installation-pages
 name: HTTP Default Installation Pages
 version: 1.0.0
 type: evaluation
@@ -22,32 +23,32 @@ match:
   rules:
     - field: http.body
       operator: contains
-      value: "Apache2 Ubuntu Default Page"
+      value: 'Apache2 Ubuntu Default Page'
     - field: http.body
       operator: contains
-      value: "Welcome to nginx!"
+      value: 'Welcome to nginx!'
     - field: http.body
       operator: contains
-      value: "Test Page for the Apache HTTP Server"
+      value: 'Test Page for the Apache HTTP Server'
     - field: http.body
       operator: contains
-      value: "IIS Windows Server"
+      value: 'IIS Windows Server'
     - field: http.body
       operator: contains
-      value: "Welcome to CentOS"
+      value: 'Welcome to CentOS'
     - field: http.body
       operator: contains
-      value: "It works!"
+      value: 'It works!'
     - field: http.title
       operator: contains
-      value: "Apache2 Debian Default Page"
+      value: 'Apache2 Debian Default Page'
     - field: http.title
       operator: contains
-      value: "Welcome to nginx"
+      value: 'Welcome to nginx'
 
 output:
   vulnerability: true
   severity: low
-  message: "HTTP server is displaying default installation page"
-  remediation: "Remove default pages and configure proper web content. This indicates incomplete server configuration"
-  reference: "https://owasp.org/www-community/vulnerabilities/Default_Pages"
+  message: 'HTTP server is displaying default installation page'
+  remediation: 'Remove default pages and configure proper web content. This indicates incomplete server configuration'
+  reference: 'https://owasp.org/www-community/vulnerabilities/Default_Pages'

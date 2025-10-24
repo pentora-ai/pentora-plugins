@@ -1,3 +1,4 @@
+id: redis-no-authentication
 name: Redis No Authentication
 version: 1.0.0
 type: evaluation
@@ -25,14 +26,14 @@ match:
       value: false
     - field: redis.info
       operator: contains
-      value: "redis_version"
+      value: 'redis_version'
     - field: redis.banner
       operator: contains
-      value: "Redis"
+      value: 'Redis'
 
 output:
   vulnerability: true
   severity: critical
-  message: "Redis server detected - likely has no authentication enabled (default configuration)"
-  remediation: "Enable Redis authentication with requirepass in redis.conf. Bind to localhost only if not needed remotely. Use strong passwords and consider Redis ACLs (v6+)"
-  reference: "https://redis.io/docs/management/security/"
+  message: 'Redis server detected - likely has no authentication enabled (default configuration)'
+  remediation: 'Enable Redis authentication with requirepass in redis.conf. Bind to localhost only if not needed remotely. Use strong passwords and consider Redis ACLs (v6+)'
+  reference: 'https://redis.io/docs/management/security/'

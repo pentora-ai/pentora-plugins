@@ -1,3 +1,4 @@
+id: ssh-weak-key-exchange-algorithm
 name: SSH Weak Key Exchange Algorithm
 version: 1.0.0
 type: evaluation
@@ -22,17 +23,17 @@ match:
   rules:
     - field: ssh.kex_algorithms
       operator: contains
-      value: "diffie-hellman-group1-sha1"
+      value: 'diffie-hellman-group1-sha1'
     - field: ssh.kex_algorithms
       operator: contains
-      value: "diffie-hellman-group-exchange-sha1"
+      value: 'diffie-hellman-group-exchange-sha1'
     - field: ssh.kex_algorithms
       operator: contains
-      value: "diffie-hellman-group14-sha1"
+      value: 'diffie-hellman-group14-sha1'
 
 output:
   vulnerability: true
   severity: medium
-  message: "SSH server supports weak key exchange algorithms (SHA-1 based)"
-  remediation: "Disable SHA-1 based key exchange algorithms. Use curve25519-sha256, ecdh-sha2-nistp256, or diffie-hellman-group-exchange-sha256"
-  reference: "https://www.ssh.com/academy/ssh/kex"
+  message: 'SSH server supports weak key exchange algorithms (SHA-1 based)'
+  remediation: 'Disable SHA-1 based key exchange algorithms. Use curve25519-sha256, ecdh-sha2-nistp256, or diffie-hellman-group-exchange-sha256'
+  reference: 'https://www.ssh.com/academy/ssh/kex'

@@ -1,3 +1,4 @@
+id: ssh-weak-encryption-cipher
 name: SSH Weak Encryption Cipher
 version: 1.0.0
 type: evaluation
@@ -22,29 +23,29 @@ match:
   rules:
     - field: ssh.encryption_algorithms
       operator: contains
-      value: "3des-cbc"
+      value: '3des-cbc'
     - field: ssh.encryption_algorithms
       operator: contains
-      value: "aes128-cbc"
+      value: 'aes128-cbc'
     - field: ssh.encryption_algorithms
       operator: contains
-      value: "aes192-cbc"
+      value: 'aes192-cbc'
     - field: ssh.encryption_algorithms
       operator: contains
-      value: "aes256-cbc"
+      value: 'aes256-cbc'
     - field: ssh.encryption_algorithms
       operator: contains
-      value: "arcfour"
+      value: 'arcfour'
     - field: ssh.encryption_algorithms
       operator: contains
-      value: "blowfish-cbc"
+      value: 'blowfish-cbc'
     - field: ssh.encryption_algorithms
       operator: contains
-      value: "cast128-cbc"
+      value: 'cast128-cbc'
 
 output:
   vulnerability: true
   severity: high
-  message: "SSH server supports weak or deprecated encryption ciphers (CBC mode or RC4)"
-  remediation: "Disable CBC mode and RC4 ciphers. Use chacha20-poly1305@openssh.com, aes128-gcm@openssh.com, or aes256-gcm@openssh.com"
-  reference: "https://www.ssh.com/academy/ssh/encryption"
+  message: 'SSH server supports weak or deprecated encryption ciphers (CBC mode or RC4)'
+  remediation: 'Disable CBC mode and RC4 ciphers. Use chacha20-poly1305@openssh.com, aes128-gcm@openssh.com, or aes256-gcm@openssh.com'
+  reference: 'https://www.ssh.com/academy/ssh/encryption'

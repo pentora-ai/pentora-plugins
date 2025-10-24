@@ -1,3 +1,4 @@
+id: tls-expired-certificate
 name: TLS Expired Certificate
 version: 1.0.0
 type: evaluation
@@ -25,7 +26,7 @@ match:
       value: true
     - field: tls.certificate.not_after
       operator: lt
-      value: "{{now}}"
+      value: '{{now}}'
     - field: tls.certificate.days_until_expiry
       operator: lte
       value: 0
@@ -33,6 +34,6 @@ match:
 output:
   vulnerability: true
   severity: high
-  message: "TLS certificate has expired"
+  message: 'TLS certificate has expired'
   remediation: "Renew the SSL/TLS certificate immediately. Consider using automated certificate management (e.g., Let's Encrypt with auto-renewal)"
-  reference: "https://www.rfc-editor.org/rfc/rfc5280"
+  reference: 'https://www.rfc-editor.org/rfc/rfc5280'

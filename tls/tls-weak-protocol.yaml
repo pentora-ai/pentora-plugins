@@ -1,3 +1,4 @@
+id: tls-weak-protocol-version
 name: TLS Weak Protocol Version
 version: 1.0.0
 type: evaluation
@@ -23,26 +24,26 @@ match:
   rules:
     - field: tls.version
       operator: equals
-      value: "SSLv2"
+      value: 'SSLv2'
     - field: tls.version
       operator: equals
-      value: "SSLv3"
+      value: 'SSLv3'
     - field: tls.version
       operator: equals
-      value: "TLSv1.0"
+      value: 'TLSv1.0'
     - field: tls.version
       operator: equals
-      value: "TLSv1.1"
+      value: 'TLSv1.1'
     - field: tls.supported_versions
       operator: contains
-      value: "SSLv2"
+      value: 'SSLv2'
     - field: tls.supported_versions
       operator: contains
-      value: "SSLv3"
+      value: 'SSLv3'
 
 output:
   vulnerability: true
   severity: critical
-  message: "Server supports weak SSL/TLS protocol versions (SSLv2, SSLv3, TLS 1.0, or TLS 1.1)"
-  remediation: "Disable SSLv2, SSLv3, TLS 1.0, and TLS 1.1. Only support TLS 1.2 and TLS 1.3. These old protocols are vulnerable to POODLE, BEAST, and other attacks"
-  reference: "https://www.rfc-editor.org/rfc/rfc8996"
+  message: 'Server supports weak SSL/TLS protocol versions (SSLv2, SSLv3, TLS 1.0, or TLS 1.1)'
+  remediation: 'Disable SSLv2, SSLv3, TLS 1.0, and TLS 1.1. Only support TLS 1.2 and TLS 1.3. These old protocols are vulnerable to POODLE, BEAST, and other attacks'
+  reference: 'https://www.rfc-editor.org/rfc/rfc8996'

@@ -1,3 +1,4 @@
+id: weak-snmp-community-string
 name: Weak SNMP Community String
 version: 1.0.0
 type: evaluation
@@ -22,20 +23,20 @@ match:
   rules:
     - field: snmp.version
       operator: equals
-      value: "SNMPv1"
+      value: 'SNMPv1'
     - field: snmp.version
       operator: equals
-      value: "SNMPv2c"
+      value: 'SNMPv2c'
     - field: snmp.community
       operator: equals
-      value: "public"
+      value: 'public'
     - field: snmp.community
       operator: equals
-      value: "private"
+      value: 'private'
 
 output:
   vulnerability: true
   severity: high
-  message: "SNMP service detected with weak version (v1/v2c) or default community strings"
-  remediation: "Upgrade to SNMPv3 with authentication and encryption. If v1/v2c must be used, change default community strings (public/private) to strong, unique values. Restrict SNMP access by IP"
-  reference: "https://www.cisa.gov/news-events/alerts/2002/02/12/snmp-vulnerabilities-multiple-vendors"
+  message: 'SNMP service detected with weak version (v1/v2c) or default community strings'
+  remediation: 'Upgrade to SNMPv3 with authentication and encryption. If v1/v2c must be used, change default community strings (public/private) to strong, unique values. Restrict SNMP access by IP'
+  reference: 'https://www.cisa.gov/news-events/alerts/2002/02/12/snmp-vulnerabilities-multiple-vendors'

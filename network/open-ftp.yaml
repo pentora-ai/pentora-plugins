@@ -1,3 +1,4 @@
+id: open-ftp-service
 name: Open FTP Service
 version: 1.0.0
 type: evaluation
@@ -28,11 +29,11 @@ match:
       value: true
     - field: service.name
       operator: equals
-      value: "ftp"
+      value: 'ftp'
 
 output:
   vulnerability: true
   severity: high
-  message: "FTP service detected - transmits credentials and data in cleartext"
+  message: 'FTP service detected - transmits credentials and data in cleartext'
   remediation: "Replace FTP with SFTP (SSH File Transfer Protocol) or FTPS (FTP over TLS). If FTP must be used, ensure it's not accessible from the internet and disable anonymous access"
-  reference: "https://cwe.mitre.org/data/definitions/319.html"
+  reference: 'https://cwe.mitre.org/data/definitions/319.html'

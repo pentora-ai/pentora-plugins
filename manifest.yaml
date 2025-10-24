@@ -4,237 +4,255 @@
 
 version: 1.0.0
 plugins:
-  - name: MySQL Default Credentials
+  - id: mysql-default-credentials
+    name: MySQL Default Credentials
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
-      - database
+      - misc
     url: https://plugins.pentora.ai/database/mysql-default-creds.yaml
-    checksum: sha256:bf9727aa768b3e8b074739d5030114047e53a49fdeee1f6f6029729138ce6d5a
-    size: 1184
-  - name: PostgreSQL Default Credentials
+    checksum: sha256:1ecd2ca98723e8db9071512b49c4776b53030f6e266bc7224d7f021aeb24319f
+    size: 1214
+  - id: postgresql-default-credentials
+    name: PostgreSQL Default Credentials
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
-      - database
+      - misc
     url: https://plugins.pentora.ai/database/postgres-default-creds.yaml
-    checksum: sha256:54a50a72641b9755e76f406e353197b06e7ada8f78cfd12fdb6083eb54576c92
-    size: 1142
-  - name: Redis No Authentication
+    checksum: sha256:b999c69867f040e2ac184de7641c771d4072179cc73e608f18c058a4f211b589
+    size: 1177
+  - id: redis-no-authentication
+    name: Redis No Authentication
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
-      - database
+      - misc
     url: https://plugins.pentora.ai/database/redis-no-auth.yaml
-    checksum: sha256:2a4756be6baf13f09847113cf795cb6a19af419f6fcba2846c19078417be679d
-    size: 1094
-  - name: HTTP Default Installation Pages
+    checksum: sha256:907b4876d08fc89a563e9a44e21d8bf289145e52be1edd5da55d5f9532204c6c
+    size: 1122
+  - id: http-default-installation-pages
+    name: HTTP Default Installation Pages
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - http
     url: https://plugins.pentora.ai/http/http-default-pages.yaml
-    checksum: sha256:33cda564a82c34d5ad9b62d1e36c94b354a75ea0609ce95dab147e08f1214e5f
-    size: 1502
-  - name: HTTP Missing Security Headers
+    checksum: sha256:1e7e89e182e220fbcefcabf300821ec983cee04b2ba5cf59dc6b4fffedd47f84
+    size: 1538
+  - id: http-missing-security-headers
+    name: HTTP Missing Security Headers
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - http
     url: https://plugins.pentora.ai/http/http-missing-security-headers.yaml
-    checksum: sha256:4e9ca0a9e0f99276a2afd6c4ac3f6cfa8edb57777af7be21421b411dbf417c07
-    size: 1243
-  - name: HTTP Server Version Disclosure
+    checksum: sha256:649e6b4bf3b1498ab2f659aac84bf0c86b4af055ff41ef6b2d29af0024be42f1
+    size: 1277
+  - id: http-server-version-disclosure
+    name: HTTP Server Version Disclosure
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - http
     url: https://plugins.pentora.ai/http/http-server-version-disclosure.yaml
-    checksum: sha256:0b3443b5d2b8cc70e20f65de09140e495409f1f39df42ed33a68eaecccb98ccb
-    size: 1542
-  - name: HTTP Weak SSL/TLS Configuration
+    checksum: sha256:7816ad4804d941a51ee7dd7f8e905251af6115d518910b11f323aec27532f96b
+    size: 1577
+  - id: http-weak-ssl-tls-configuration
+    name: HTTP Weak SSL/TLS Configuration
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - http
     url: https://plugins.pentora.ai/http/http-weak-ssl.yaml
-    checksum: sha256:505ed680981d64548dfac8bb7ff8c9cf56978e963d25057cc535bef76b1ad37e
-    size: 1406
-  - name: Open FTP Service
+    checksum: sha256:f32011f749beab107201089808309d94bf687bc990270db65e318e21227f0ab6
+    size: 1442
+  - id: open-ftp-service
+    name: Open FTP Service
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
-      - network
+      - misc
     url: https://plugins.pentora.ai/network/open-ftp.yaml
-    checksum: sha256:001c9330cf9fc4a6d2659e396dfbc97c5e2b2270631fb241a12a51a26b7c798f
-    size: 1093
-  - name: Open Telnet Service
+    checksum: sha256:7f8fca355f2adee4a0c4d1f5e0cfbfb11023445e24c4590184048164fda7c73b
+    size: 1114
+  - id: open-telnet-service
+    name: Open Telnet Service
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
-      - network
+      - misc
     url: https://plugins.pentora.ai/network/open-telnet.yaml
-    checksum: sha256:04c1de9784534845329b161e942f20e616b8dfebbe3d705d05e5bcf6827083e9
-    size: 968
-  - name: Weak SNMP Community String
+    checksum: sha256:347b8e6e09f0e824fa32efd3d15b1b13f835a85b256203e855250ef758d25d6c
+    size: 992
+  - id: weak-snmp-community-string
+    name: Weak SNMP Community String
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
-      - network
+      - misc
     url: https://plugins.pentora.ai/network/weak-snmp-community.yaml
-    checksum: sha256:c0a468593991e8078561b610d604e30a248587da596ce33da0285da0118a7896
-    size: 1274
-  - name: OpenSSH CVE-2024-6387 (regreSSHion)
+    checksum: sha256:dd36b1d43a1d74e3add4634a773c36f02730eaec53529a05499f84e82f71dbaf
+    size: 1305
+  - id: openssh-cve-2024-6387-regresshion
+    name: OpenSSH CVE-2024-6387 (regreSSHion)
     version: 1.0.3
     description: Signal handler race condition in OpenSSH's server (sshd) allows remote unauthenticated code execution
     author: pentora-security
     categories:
       - ssh
     url: https://plugins.pentora.ai/ssh/ssh-cve-2024-6387.yaml
-    checksum: sha256:facd60a16f8e8846462c7d33db9d093942be21a4af1859bbf1808ad9a0c099d4
-    size: 4522
-  - name: SSH Default Credentials
+    checksum: sha256:950707e6b78ae21a9c02cbd473f8d1406dbe54009b4967ef99511c0e75d09284
+    size: 4560
+  - id: ssh-default-credentials
+    name: SSH Default Credentials
     version: 1.0.1
     description: ""
     author: pentora-security
     categories:
       - ssh
     url: https://plugins.pentora.ai/ssh/ssh-default-creds.yaml
-    checksum: sha256:4b354a8f458e49767a1f53fea48d91a1266f11ceb44c252baeac3a88acf10bf1
-    size: 1248
-  - name: SSH Weak Encryption Cipher
+    checksum: sha256:fd47ca5d7bfd2431b441b28ef537358594d4912a947be03630edd6dce3557770
+    size: 1276
+  - id: ssh-weak-encryption-cipher
+    name: SSH Weak Encryption Cipher
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - ssh
     url: https://plugins.pentora.ai/ssh/ssh-weak-cipher.yaml
-    checksum: sha256:d244b9e8be7063d80ea3a30244a356843fd2aba34d0e4c02560f62ab8efd4469
-    size: 1450
-  - name: SSH Weak Key Exchange Algorithm
+    checksum: sha256:53511c82ec0eac2c2045621f7c18519fc125bfdb00593698a0e87d4aa02b04be
+    size: 1481
+  - id: ssh-weak-key-exchange-algorithm
+    name: SSH Weak Key Exchange Algorithm
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - ssh
     url: https://plugins.pentora.ai/ssh/ssh-weak-key-exchange.yaml
-    checksum: sha256:d8690b17b02392bce5237d0f1c7db693ab3e26d3f2c7db78fda9e78260460a0c
-    size: 1117
-  - name: SSH Weak MAC Algorithm
+    checksum: sha256:918e687420ab5586775b86dc0447ad3fb0c32da500d61272ca8d730995f35606
+    size: 1153
+  - id: ssh-weak-mac-algorithm
+    name: SSH Weak MAC Algorithm
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - ssh
     url: https://plugins.pentora.ai/ssh/ssh-weak-mac.yaml
-    checksum: sha256:10f16a1c29b0ebbfd2d5c23ca4e7328a43f7b234093559084067bed5c673bc8c
-    size: 1067
-  - name: TLS Expired Certificate
+    checksum: sha256:1f9aefbabafc5f2009c68f4d5f26b559473f19db60a005b59cc7a549c2e53eae
+    size: 1094
+  - id: tls-expired-certificate
+    name: TLS Expired Certificate
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - tls
     url: https://plugins.pentora.ai/tls/tls-expired-cert.yaml
-    checksum: sha256:5de64ed06f71335255616faa839f3de2b550f3d88b3733e9997491d11191e3c3
-    size: 1000
-  - name: TLS Self-Signed Certificate
+    checksum: sha256:7ee0b35ad65b329923e67ac8bd5c8c2c5883385e67ebd4e30545da351d99722a
+    size: 1028
+  - id: tls-self-signed-certificate
+    name: TLS Self-Signed Certificate
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - tls
     url: https://plugins.pentora.ai/tls/tls-self-signed-cert.yaml
-    checksum: sha256:7df27315073ff4504335668f7e764eac9c7022161c5b8ed0f5de35a7736de541
-    size: 1081
-  - name: TLS Weak Cipher Suite
+    checksum: sha256:e6f837eea5bfd5dea62f422196a70ee0c46c4cc65ed47e16cca3a07e068b7069
+    size: 1113
+  - id: tls-weak-cipher-suite
+    name: TLS Weak Cipher Suite
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - tls
     url: https://plugins.pentora.ai/tls/tls-weak-cipher.yaml
-    checksum: sha256:6f9fdac7a69dab59cf3857d67164f53d94430bc8182dcb2a701232518a91563b
-    size: 1299
-  - name: TLS Weak Protocol Version
+    checksum: sha256:2403d13fcfecd2e1b8bafe5aba9473c5ec8fb4a84028cc9d7bc3f6e8d3891cae
+    size: 1325
+  - id: tls-weak-protocol-version
+    name: TLS Weak Protocol Version
     version: 1.0.0
     description: ""
     author: pentora-security
     categories:
       - tls
     url: https://plugins.pentora.ai/tls/tls-weak-protocol.yaml
-    checksum: sha256:7fd2b8273c04cf68810c214d3416303b9c163ede61fe9e4180711e3c1aec4e65
-    size: 1334
+    checksum: sha256:683527dc72392a96f2f563dee22e01393848a3454a95815fbea36f525e249fb7
+    size: 1364
 index:
-  database:
-    - name: MySQL Default Credentials
-      version: 1.0.0
-      checksum: sha256:bf9727aa768b3e8b074739d5030114047e53a49fdeee1f6f6029729138ce6d5a
-    - name: PostgreSQL Default Credentials
-      version: 1.0.0
-      checksum: sha256:54a50a72641b9755e76f406e353197b06e7ada8f78cfd12fdb6083eb54576c92
-    - name: Redis No Authentication
-      version: 1.0.0
-      checksum: sha256:2a4756be6baf13f09847113cf795cb6a19af419f6fcba2846c19078417be679d
   http:
     - name: HTTP Default Installation Pages
       version: 1.0.0
-      checksum: sha256:33cda564a82c34d5ad9b62d1e36c94b354a75ea0609ce95dab147e08f1214e5f
+      checksum: sha256:1e7e89e182e220fbcefcabf300821ec983cee04b2ba5cf59dc6b4fffedd47f84
     - name: HTTP Missing Security Headers
       version: 1.0.0
-      checksum: sha256:4e9ca0a9e0f99276a2afd6c4ac3f6cfa8edb57777af7be21421b411dbf417c07
+      checksum: sha256:649e6b4bf3b1498ab2f659aac84bf0c86b4af055ff41ef6b2d29af0024be42f1
     - name: HTTP Server Version Disclosure
       version: 1.0.0
-      checksum: sha256:0b3443b5d2b8cc70e20f65de09140e495409f1f39df42ed33a68eaecccb98ccb
+      checksum: sha256:7816ad4804d941a51ee7dd7f8e905251af6115d518910b11f323aec27532f96b
     - name: HTTP Weak SSL/TLS Configuration
       version: 1.0.0
-      checksum: sha256:505ed680981d64548dfac8bb7ff8c9cf56978e963d25057cc535bef76b1ad37e
-  network:
+      checksum: sha256:f32011f749beab107201089808309d94bf687bc990270db65e318e21227f0ab6
+  misc:
+    - name: MySQL Default Credentials
+      version: 1.0.0
+      checksum: sha256:1ecd2ca98723e8db9071512b49c4776b53030f6e266bc7224d7f021aeb24319f
+    - name: PostgreSQL Default Credentials
+      version: 1.0.0
+      checksum: sha256:b999c69867f040e2ac184de7641c771d4072179cc73e608f18c058a4f211b589
+    - name: Redis No Authentication
+      version: 1.0.0
+      checksum: sha256:907b4876d08fc89a563e9a44e21d8bf289145e52be1edd5da55d5f9532204c6c
     - name: Open FTP Service
       version: 1.0.0
-      checksum: sha256:001c9330cf9fc4a6d2659e396dfbc97c5e2b2270631fb241a12a51a26b7c798f
+      checksum: sha256:7f8fca355f2adee4a0c4d1f5e0cfbfb11023445e24c4590184048164fda7c73b
     - name: Open Telnet Service
       version: 1.0.0
-      checksum: sha256:04c1de9784534845329b161e942f20e616b8dfebbe3d705d05e5bcf6827083e9
+      checksum: sha256:347b8e6e09f0e824fa32efd3d15b1b13f835a85b256203e855250ef758d25d6c
     - name: Weak SNMP Community String
       version: 1.0.0
-      checksum: sha256:c0a468593991e8078561b610d604e30a248587da596ce33da0285da0118a7896
+      checksum: sha256:dd36b1d43a1d74e3add4634a773c36f02730eaec53529a05499f84e82f71dbaf
   ssh:
     - name: OpenSSH CVE-2024-6387 (regreSSHion)
       version: 1.0.3
-      checksum: sha256:facd60a16f8e8846462c7d33db9d093942be21a4af1859bbf1808ad9a0c099d4
+      checksum: sha256:950707e6b78ae21a9c02cbd473f8d1406dbe54009b4967ef99511c0e75d09284
     - name: SSH Default Credentials
       version: 1.0.1
-      checksum: sha256:4b354a8f458e49767a1f53fea48d91a1266f11ceb44c252baeac3a88acf10bf1
+      checksum: sha256:fd47ca5d7bfd2431b441b28ef537358594d4912a947be03630edd6dce3557770
     - name: SSH Weak Encryption Cipher
       version: 1.0.0
-      checksum: sha256:d244b9e8be7063d80ea3a30244a356843fd2aba34d0e4c02560f62ab8efd4469
+      checksum: sha256:53511c82ec0eac2c2045621f7c18519fc125bfdb00593698a0e87d4aa02b04be
     - name: SSH Weak Key Exchange Algorithm
       version: 1.0.0
-      checksum: sha256:d8690b17b02392bce5237d0f1c7db693ab3e26d3f2c7db78fda9e78260460a0c
+      checksum: sha256:918e687420ab5586775b86dc0447ad3fb0c32da500d61272ca8d730995f35606
     - name: SSH Weak MAC Algorithm
       version: 1.0.0
-      checksum: sha256:10f16a1c29b0ebbfd2d5c23ca4e7328a43f7b234093559084067bed5c673bc8c
+      checksum: sha256:1f9aefbabafc5f2009c68f4d5f26b559473f19db60a005b59cc7a549c2e53eae
   tls:
     - name: TLS Expired Certificate
       version: 1.0.0
-      checksum: sha256:5de64ed06f71335255616faa839f3de2b550f3d88b3733e9997491d11191e3c3
+      checksum: sha256:7ee0b35ad65b329923e67ac8bd5c8c2c5883385e67ebd4e30545da351d99722a
     - name: TLS Self-Signed Certificate
       version: 1.0.0
-      checksum: sha256:7df27315073ff4504335668f7e764eac9c7022161c5b8ed0f5de35a7736de541
+      checksum: sha256:e6f837eea5bfd5dea62f422196a70ee0c46c4cc65ed47e16cca3a07e068b7069
     - name: TLS Weak Cipher Suite
       version: 1.0.0
-      checksum: sha256:6f9fdac7a69dab59cf3857d67164f53d94430bc8182dcb2a701232518a91563b
+      checksum: sha256:2403d13fcfecd2e1b8bafe5aba9473c5ec8fb4a84028cc9d7bc3f6e8d3891cae
     - name: TLS Weak Protocol Version
       version: 1.0.0
-      checksum: sha256:7fd2b8273c04cf68810c214d3416303b9c163ede61fe9e4180711e3c1aec4e65
+      checksum: sha256:683527dc72392a96f2f563dee22e01393848a3454a95815fbea36f525e249fb7

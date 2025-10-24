@@ -1,3 +1,4 @@
+id: open-telnet-service
 name: Open Telnet Service
 version: 1.0.0
 type: evaluation
@@ -25,11 +26,11 @@ match:
       value: true
     - field: service.name
       operator: equals
-      value: "telnet"
+      value: 'telnet'
 
 output:
   vulnerability: true
   severity: critical
-  message: "Telnet service detected - transmits all data including credentials in cleartext"
-  remediation: "Disable Telnet service immediately. Use SSH instead for secure remote access. Telnet is obsolete and insecure"
-  reference: "https://www.cisa.gov/uscert/ncas/alerts/TA13-175A"
+  message: 'Telnet service detected - transmits all data including credentials in cleartext'
+  remediation: 'Disable Telnet service immediately. Use SSH instead for secure remote access. Telnet is obsolete and insecure'
+  reference: 'https://www.cisa.gov/uscert/ncas/alerts/TA13-175A'
