@@ -3,7 +3,7 @@
 # DO NOT EDIT MANUALLY
 
 version: 1.0.0
-last_updated: 2025-10-25T02:38:06.455103+03:00
+last_updated: 2025-10-24T23:44:13.895770214Z
 plugins:
   - id: mysql-default-credentials
     name: MySQL Default Credentials
@@ -11,7 +11,7 @@ plugins:
     description: ""
     author: pentora-security
     categories:
-      - misc
+      - database
     url: https://plugins.pentora.ai/database/mysql-default-creds.yaml
     checksum: sha256:1ecd2ca98723e8db9071512b49c4776b53030f6e266bc7224d7f021aeb24319f
     size: 1214
@@ -21,7 +21,7 @@ plugins:
     description: ""
     author: pentora-security
     categories:
-      - misc
+      - database
     url: https://plugins.pentora.ai/database/postgres-default-creds.yaml
     checksum: sha256:b999c69867f040e2ac184de7641c771d4072179cc73e608f18c058a4f211b589
     size: 1177
@@ -31,7 +31,7 @@ plugins:
     description: ""
     author: pentora-security
     categories:
-      - misc
+      - database
     url: https://plugins.pentora.ai/database/redis-no-auth.yaml
     checksum: sha256:907b4876d08fc89a563e9a44e21d8bf289145e52be1edd5da55d5f9532204c6c
     size: 1122
@@ -81,7 +81,7 @@ plugins:
     description: ""
     author: pentora-security
     categories:
-      - misc
+      - network
     url: https://plugins.pentora.ai/network/open-ftp.yaml
     checksum: sha256:7f8fca355f2adee4a0c4d1f5e0cfbfb11023445e24c4590184048164fda7c73b
     size: 1114
@@ -91,7 +91,7 @@ plugins:
     description: ""
     author: pentora-security
     categories:
-      - misc
+      - network
     url: https://plugins.pentora.ai/network/open-telnet.yaml
     checksum: sha256:347b8e6e09f0e824fa32efd3d15b1b13f835a85b256203e855250ef758d25d6c
     size: 992
@@ -101,7 +101,7 @@ plugins:
     description: ""
     author: pentora-security
     categories:
-      - misc
+      - network
     url: https://plugins.pentora.ai/network/weak-snmp-community.yaml
     checksum: sha256:dd36b1d43a1d74e3add4634a773c36f02730eaec53529a05499f84e82f71dbaf
     size: 1305
@@ -196,6 +196,16 @@ plugins:
     checksum: sha256:683527dc72392a96f2f563dee22e01393848a3454a95815fbea36f525e249fb7
     size: 1364
 index:
+  database:
+    - name: MySQL Default Credentials
+      version: 1.0.0
+      checksum: sha256:1ecd2ca98723e8db9071512b49c4776b53030f6e266bc7224d7f021aeb24319f
+    - name: PostgreSQL Default Credentials
+      version: 1.0.0
+      checksum: sha256:b999c69867f040e2ac184de7641c771d4072179cc73e608f18c058a4f211b589
+    - name: Redis No Authentication
+      version: 1.0.0
+      checksum: sha256:907b4876d08fc89a563e9a44e21d8bf289145e52be1edd5da55d5f9532204c6c
   http:
     - name: HTTP Default Installation Pages
       version: 1.0.0
@@ -209,16 +219,7 @@ index:
     - name: HTTP Weak SSL/TLS Configuration
       version: 1.0.0
       checksum: sha256:f32011f749beab107201089808309d94bf687bc990270db65e318e21227f0ab6
-  misc:
-    - name: MySQL Default Credentials
-      version: 1.0.0
-      checksum: sha256:1ecd2ca98723e8db9071512b49c4776b53030f6e266bc7224d7f021aeb24319f
-    - name: PostgreSQL Default Credentials
-      version: 1.0.0
-      checksum: sha256:b999c69867f040e2ac184de7641c771d4072179cc73e608f18c058a4f211b589
-    - name: Redis No Authentication
-      version: 1.0.0
-      checksum: sha256:907b4876d08fc89a563e9a44e21d8bf289145e52be1edd5da55d5f9532204c6c
+  network:
     - name: Open FTP Service
       version: 1.0.0
       checksum: sha256:7f8fca355f2adee4a0c4d1f5e0cfbfb11023445e24c4590184048164fda7c73b
