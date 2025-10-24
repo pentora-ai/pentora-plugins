@@ -18,48 +18,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup rclone
-        run: |
-          curl https://rclone.org/install.sh | sudo bash
-
-      - name: Configure rclone for Cloudflare R2
+      - name: Upload plugins to R2
+        uses: wei/rclone@v1
+        with:
+          args: sync . r2:pentora-plugins --exclude '.git/**' --exclude '.github/**' --exclude 'README.md' --progress --delete-excluded
         env:
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-        run: |
-          mkdir -p ~/.config/rclone
-          cat > ~/.config/rclone/rclone.conf << EOF
-          [r2]
-          type = s3
-          provider = Cloudflare
-          access_key_id = $R2_ACCESS_KEY_ID
-          secret_access_key = $R2_SECRET_ACCESS_KEY
-          endpoint = https://$R2_ACCOUNT_ID.r2.cloudflarestorage.com
-          acl = public-read
-          no_check_bucket = true
-          EOF
-
-      - name: Sync all plugins to R2
-        run: |
-          echo "📦 Syncing entire plugin repository to R2..."
-          rclone sync . r2:pentora-plugins/ \
-            --exclude '.git/**' \
-            --exclude '.github/**' \
-            --exclude 'README.md' \
-            --progress \
-            --delete-excluded \
-            --transfers 8 \
-            --checkers 16
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+          RCLONE_CONFIG_R2_ACL: public-read
 
       - name: Verify upload
-        run: |
-          echo "✅ Verifying uploaded files..."
-          echo "Total files in R2:"
-          rclone ls r2:pentora-plugins/ | wc -l
-          echo ""
-          echo "Sample files:"
-          rclone ls r2:pentora-plugins/ | head -20
+        uses: wei/rclone@v1
+        with:
+          args: ls r2:pentora-plugins --max-depth 1
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
 
       - name: Purge Cloudflare cache
         if: success()
