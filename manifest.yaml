@@ -10,7 +10,7 @@ plugins:
     author: pentora-security
     categories:
       - database
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/database/mysql-default-creds.yaml
+    url: https://plugins.pentora.ai/database/mysql-default-creds.yaml
     checksum: sha256:8308e110695c2f3b817a77eb3723c6aae52c96bad6d6247b62cf6a5d6c6303a7
     size: 1155
   - name: PostgreSQL Default Credentials
@@ -19,7 +19,7 @@ plugins:
     author: pentora-security
     categories:
       - database
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/database/postgres-default-creds.yaml
+    url: https://plugins.pentora.ai/database/postgres-default-creds.yaml
     checksum: sha256:226ea532077c3824a602fd8f8456ba3855cc32323ebcbe0278c62e9aa7dbaa91
     size: 1115
   - name: Redis No Authentication
@@ -28,7 +28,7 @@ plugins:
     author: pentora-security
     categories:
       - database
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/database/redis-no-auth.yaml
+    url: https://plugins.pentora.ai/database/redis-no-auth.yaml
     checksum: sha256:728ad01968463809a0f22cd9b5bdb32657815a954a87b380d0c01f566383a975
     size: 1065
   - name: HTTP Default Installation Pages
@@ -37,7 +37,7 @@ plugins:
     author: pentora-security
     categories:
       - http
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/http/http-default-pages.yaml
+    url: https://plugins.pentora.ai/http/http-default-pages.yaml
     checksum: sha256:33cda564a82c34d5ad9b62d1e36c94b354a75ea0609ce95dab147e08f1214e5f
     size: 1502
   - name: HTTP Missing Security Headers
@@ -46,7 +46,7 @@ plugins:
     author: pentora-security
     categories:
       - http
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/http/http-missing-security-headers.yaml
+    url: https://plugins.pentora.ai/http/http-missing-security-headers.yaml
     checksum: sha256:4e9ca0a9e0f99276a2afd6c4ac3f6cfa8edb57777af7be21421b411dbf417c07
     size: 1243
   - name: HTTP Server Version Disclosure
@@ -55,7 +55,7 @@ plugins:
     author: pentora-security
     categories:
       - http
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/http/http-server-version-disclosure.yaml
+    url: https://plugins.pentora.ai/http/http-server-version-disclosure.yaml
     checksum: sha256:0b3443b5d2b8cc70e20f65de09140e495409f1f39df42ed33a68eaecccb98ccb
     size: 1542
   - name: HTTP Weak SSL/TLS Configuration
@@ -64,7 +64,7 @@ plugins:
     author: pentora-security
     categories:
       - http
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/http/http-weak-ssl.yaml
+    url: https://plugins.pentora.ai/http/http-weak-ssl.yaml
     checksum: sha256:80387e07f9507b885cd89cfa0e09325261602baaa9d241ade4b42921b8ac9cee
     size: 1371
   - name: Open FTP Service
@@ -73,7 +73,7 @@ plugins:
     author: pentora-security
     categories:
       - network
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/network/open-ftp.yaml
+    url: https://plugins.pentora.ai/network/open-ftp.yaml
     checksum: sha256:aae459e0997f37b160dc1d31c59ef13b011c69eb1ad57bf61faded234a36404a
     size: 1062
   - name: Open Telnet Service
@@ -82,7 +82,7 @@ plugins:
     author: pentora-security
     categories:
       - network
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/network/open-telnet.yaml
+    url: https://plugins.pentora.ai/network/open-telnet.yaml
     checksum: sha256:fbdd7d3d8f55a034252815a35d0b83217724d898fee2f61c9e2085b02ffe1f87
     size: 937
   - name: Weak SNMP Community String
@@ -91,7 +91,7 @@ plugins:
     author: pentora-security
     categories:
       - network
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/network/weak-snmp-community.yaml
+    url: https://plugins.pentora.ai/network/weak-snmp-community.yaml
     checksum: sha256:e62213d6cb94cb5fd8a4446e8927bd94b6ef63992bbc072a7e255fb3654acdc8
     size: 1243
   - name: OpenSSH CVE-2024-6387 (regreSSHion)
@@ -100,7 +100,7 @@ plugins:
     author: pentora-security
     categories:
       - ssh
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/ssh/ssh-cve-2024-6387.yaml
+    url: https://plugins.pentora.ai/ssh/ssh-cve-2024-6387.yaml
     checksum: sha256:facd60a16f8e8846462c7d33db9d093942be21a4af1859bbf1808ad9a0c099d4
     size: 4522
   - name: SSH Default Credentials
@@ -109,7 +109,7 @@ plugins:
     author: pentora-security
     categories:
       - ssh
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/ssh/ssh-default-creds.yaml
+    url: https://plugins.pentora.ai/ssh/ssh-default-creds.yaml
     checksum: sha256:4b354a8f458e49767a1f53fea48d91a1266f11ceb44c252baeac3a88acf10bf1
     size: 1248
   - name: SSH Weak Encryption Cipher
@@ -118,7 +118,7 @@ plugins:
     author: pentora-security
     categories:
       - ssh
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/ssh/ssh-weak-cipher.yaml
+    url: https://plugins.pentora.ai/ssh/ssh-weak-cipher.yaml
     checksum: sha256:d244b9e8be7063d80ea3a30244a356843fd2aba34d0e4c02560f62ab8efd4469
     size: 1450
   - name: SSH Weak Key Exchange Algorithm
@@ -127,7 +127,7 @@ plugins:
     author: pentora-security
     categories:
       - ssh
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/ssh/ssh-weak-key-exchange.yaml
+    url: https://plugins.pentora.ai/ssh/ssh-weak-key-exchange.yaml
     checksum: sha256:d8690b17b02392bce5237d0f1c7db693ab3e26d3f2c7db78fda9e78260460a0c
     size: 1117
   - name: SSH Weak MAC Algorithm
@@ -136,7 +136,7 @@ plugins:
     author: pentora-security
     categories:
       - ssh
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/ssh/ssh-weak-mac.yaml
+    url: https://plugins.pentora.ai/ssh/ssh-weak-mac.yaml
     checksum: sha256:10f16a1c29b0ebbfd2d5c23ca4e7328a43f7b234093559084067bed5c673bc8c
     size: 1067
   - name: TLS Expired Certificate
@@ -145,7 +145,7 @@ plugins:
     author: pentora-security
     categories:
       - tls
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/tls/tls-expired-cert.yaml
+    url: https://plugins.pentora.ai/tls/tls-expired-cert.yaml
     checksum: sha256:5de64ed06f71335255616faa839f3de2b550f3d88b3733e9997491d11191e3c3
     size: 1000
   - name: TLS Self-Signed Certificate
@@ -154,7 +154,7 @@ plugins:
     author: pentora-security
     categories:
       - tls
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/tls/tls-self-signed-cert.yaml
+    url: https://plugins.pentora.ai/tls/tls-self-signed-cert.yaml
     checksum: sha256:7df27315073ff4504335668f7e764eac9c7022161c5b8ed0f5de35a7736de541
     size: 1081
   - name: TLS Weak Cipher Suite
@@ -163,7 +163,7 @@ plugins:
     author: pentora-security
     categories:
       - tls
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/tls/tls-weak-cipher.yaml
+    url: https://plugins.pentora.ai/tls/tls-weak-cipher.yaml
     checksum: sha256:6f9fdac7a69dab59cf3857d67164f53d94430bc8182dcb2a701232518a91563b
     size: 1299
   - name: TLS Weak Protocol Version
@@ -172,7 +172,7 @@ plugins:
     author: pentora-security
     categories:
       - tls
-    url: https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main/tls/tls-weak-protocol.yaml
+    url: https://plugins.pentora.ai/tls/tls-weak-protocol.yaml
     checksum: sha256:7fd2b8273c04cf68810c214d3416303b9c163ede61fe9e4180711e3c1aec4e65
     size: 1334
 index:

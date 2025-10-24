@@ -19,7 +19,7 @@ jobs:
           go run pentora/cmd/tools/manifest-generator/main.go \
             -dir . \
             -output manifest.yaml \
-            -base-url https://raw.githubusercontent.com/pentora-ai/pentora-plugins/main
+            -base-url https://plugins.pentora.ai
       - name: Commit manifest
         run: |
           git config user.name "github-actions[bot]"
