@@ -19,6 +19,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"gopkg.in/yaml.v3"
 )
@@ -39,9 +40,10 @@ const (
 
 // PluginManifest describes available plugins in a repository.
 type PluginManifest struct {
-	Version string                    `yaml:"version"`
-	Plugins []PluginManifestEntry     `yaml:"plugins"`
-	Index   map[string][]PluginDigest `yaml:"index"` // category -> plugins
+	Version     string                    `yaml:"version"`
+	LastUpdated time.Time                 `yaml:"last_updated"`
+	Plugins     []PluginManifestEntry     `yaml:"plugins"`
+	Index       map[string][]PluginDigest `yaml:"index"` // category -> plugins
 }
 
 // PluginManifestEntry describes a plugin in the manifest.
@@ -119,9 +121,10 @@ func run() error {
 
 	// Create manifest
 	manifest := PluginManifest{
-		Version: *version,
-		Plugins: manifestEntries,
-		Index:   categoryIndex,
+		Version:     *version,
+		LastUpdated: time.Now(),
+		Plugins:     manifestEntries,
+		Index:       categoryIndex,
 	}
 
 	// Write manifest to file

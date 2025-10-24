@@ -3,6 +3,7 @@
 # DO NOT EDIT MANUALLY
 
 version: 1.0.0
+last_updated: 2025-10-25T02:38:06.455103+03:00
 plugins:
   - id: mysql-default-credentials
     name: MySQL Default Credentials
