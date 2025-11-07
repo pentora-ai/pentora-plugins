@@ -3,7 +3,7 @@
 # DO NOT EDIT MANUALLY
 
 version: 1.0.0
-last_updated: 2025-10-24T23:44:13.895770214Z
+last_updated: 2025-11-07T01:25:05.833411008Z
 plugins:
   - id: mysql-default-credentials
     name: MySQL Default Credentials
@@ -163,8 +163,8 @@ plugins:
     categories:
       - tls
     url: https://plugins.pentora.ai/tls/tls-expired-cert.yaml
-    checksum: sha256:7ee0b35ad65b329923e67ac8bd5c8c2c5883385e67ebd4e30545da351d99722a
-    size: 1028
+    checksum: sha256:21c0aa0f01381fdc5208301e6b0ca0a3bdf2b21ae8ba3668ceb50f8b13710bc3
+    size: 949
   - id: tls-self-signed-certificate
     name: TLS Self-Signed Certificate
     version: 1.0.0
@@ -173,8 +173,8 @@ plugins:
     categories:
       - tls
     url: https://plugins.pentora.ai/tls/tls-self-signed-cert.yaml
-    checksum: sha256:e6f837eea5bfd5dea62f422196a70ee0c46c4cc65ed47e16cca3a07e068b7069
-    size: 1113
+    checksum: sha256:030b3df31de36a4ee37832630b6bb770c9f2391abbe5a1dd408229c720a40037
+    size: 1040
   - id: tls-weak-cipher-suite
     name: TLS Weak Cipher Suite
     version: 1.0.0
@@ -183,8 +183,8 @@ plugins:
     categories:
       - tls
     url: https://plugins.pentora.ai/tls/tls-weak-cipher.yaml
-    checksum: sha256:2403d13fcfecd2e1b8bafe5aba9473c5ec8fb4a84028cc9d7bc3f6e8d3891cae
-    size: 1325
+    checksum: sha256:42e7eda87fcafbc6b8cc047820f21f50ed2e92e16d3410c351ff5ad37a597af3
+    size: 1315
   - id: tls-weak-protocol-version
     name: TLS Weak Protocol Version
     version: 1.0.0
@@ -248,13 +248,13 @@ index:
   tls:
     - name: TLS Expired Certificate
       version: 1.0.0
-      checksum: sha256:7ee0b35ad65b329923e67ac8bd5c8c2c5883385e67ebd4e30545da351d99722a
+      checksum: sha256:21c0aa0f01381fdc5208301e6b0ca0a3bdf2b21ae8ba3668ceb50f8b13710bc3
     - name: TLS Self-Signed Certificate
       version: 1.0.0
-      checksum: sha256:e6f837eea5bfd5dea62f422196a70ee0c46c4cc65ed47e16cca3a07e068b7069
+      checksum: sha256:030b3df31de36a4ee37832630b6bb770c9f2391abbe5a1dd408229c720a40037
     - name: TLS Weak Cipher Suite
       version: 1.0.0
-      checksum: sha256:2403d13fcfecd2e1b8bafe5aba9473c5ec8fb4a84028cc9d7bc3f6e8d3891cae
+      checksum: sha256:42e7eda87fcafbc6b8cc047820f21f50ed2e92e16d3410c351ff5ad37a597af3
     - name: TLS Weak Protocol Version
       version: 1.0.0
       checksum: sha256:683527dc72392a96f2f563dee22e01393848a3454a95815fbea36f525e249fb7
