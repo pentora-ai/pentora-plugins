@@ -11,9 +11,9 @@ metadata:
     - https://www.rfc-editor.org/rfc/rfc7525
     - https://nvd.nist.gov/vuln/detail/CVE-2015-4000
 
-# Trigger when TLS cipher suites are detected
+# Trigger when TLS cipher suite is detected
 triggers:
-  - data_key: tls.cipher_suites
+  - data_key: tls.cipher_suite
     condition: exists
     value: true
 
@@ -21,25 +21,25 @@ triggers:
 match:
   logic: OR
   rules:
-    - field: tls.cipher_suites
+    - field: tls.cipher_suite
       operator: contains
       value: 'NULL'
-    - field: tls.cipher_suites
+    - field: tls.cipher_suite
       operator: contains
       value: 'EXPORT'
-    - field: tls.cipher_suites
+    - field: tls.cipher_suite
       operator: contains
       value: 'DES'
-    - field: tls.cipher_suites
+    - field: tls.cipher_suite
       operator: contains
       value: 'RC4'
-    - field: tls.cipher_suites
+    - field: tls.cipher_suite
       operator: contains
       value: 'MD5'
-    - field: tls.cipher_suites
+    - field: tls.cipher_suite
       operator: contains
       value: 'anon'
-    - field: tls.cipher_suites
+    - field: tls.cipher_suite
       operator: matches
       value: '.*CBC.*'
 
